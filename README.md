@@ -7,5 +7,5 @@
 npm install
 ```
 - 在开发者工具菜单中执行 “工具 - 构建npm”
-- 
 ## 线上版本
+![image](program-code.jpg)
