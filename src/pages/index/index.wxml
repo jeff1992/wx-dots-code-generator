@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<view class="container">
+  <van-cell title="高度">
+    <van-stepper value="{{rows}}" bind:change="onRowsChanged" step="{{8}}" min="{{8}}" disable-input />
+  </van-cell>
+  <van-cell title="宽度">
+    <van-stepper value="{{cols}}" bind:change="onColsChanged" step="{{8}}" min="{{8}}" disable-input />
+  </van-cell>
+  <van-field label="文字" placeholder="正在开发中" disabled />
+  <van-cell-group title="点阵(点击可修改)">
+    <view class="led-container">
+      <view wx:for="{{rows}}" wx:for-index="row" class="row">
+        <view wx:for="{{cols}}" wx:for-index="col" class="led{{leds[row*cols+col].on?' on':''}}" bindtap="onLedTap" data-row="{{row}}" data-col="{{col}}"></view>
+      </view>
+    </view>
+  </van-cell-group>
+  <van-cell-group title="HEX">
+    <view class="code">
+      <rich-text nodes="{{hexCode}}" type="text"></rich-text>
+      <van-button size="mini" type="primary" bind:click="copyHexCode">复制</van-button>
+    </view>
+  </van-cell-group>
+  <van-cell-group title="BIN">
+    <view class="code">
+      <rich-text nodes="{{binCode}}" type="text" class="code"></rich-text>
+      <van-button size="mini" type="primary" bind:click="copyBinCode">复制</van-button>
+    </view>
+  </van-cell-group>
+</view>

@@ -1,0 +1,27 @@
+.led-container {
+  background: #e0e1e5;
+  padding: 5px;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+.led {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin-left: 1px;
+  margin-top: 1px;
+  background: white;
+  flex-shrink: 0;
+}
+.led.on {
+  background: red;
+}
+.row {
+  display: inline-block;
+  white-space: normal;
+  overflow-wrap: normal;
+  display: flex;
+}
+.code {
+  padding: 10px;
+}
